@@ -1,0 +1,87 @@
+# Wi-Fi Status Check App
+
+This Flutter app allows users to check the current Wi-Fi connection status of their device. It uses the `wifi_status` package to retrieve the status and displays whether the device is connected to Wi-Fi or not.
+
+## Features
+- Displays Wi-Fi connection status: Connected or Disconnected.
+- Simple and user-friendly UI.
+- Option to check the status again using a button.
+
+## Getting started
+
+Prerequisites
+Flutter 2.0+: Ensure you have Flutter 2.0 or later installed.
+
+Dart 2.12+: The package supports Dart null safety.
+
+## Usage
+
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:wifi_status/wifi_status.dart';
+
+class WifiStatusPage extends StatefulWidget {
+  @override
+  _WifiStatusPageState createState() => _WifiStatusPageState();
+}
+
+class _WifiStatusPageState extends State<WifiStatusPage> {
+  String _connectionStatus = 'Checking...';
+
+  @override
+  void initState() {
+    super.initState();
+    _checkWifiStatus();
+  }
+
+  // Method to check Wi-Fi connection status
+  Future<void> _checkWifiStatus() async {
+    String wifiStatus = await WifiStatus.getWifiStatus();
+    setState(() {
+      if (wifiStatus == WifiStatus.connected) {
+        _connectionStatus = 'Connected to Wi-Fi';
+      } else if (wifiStatus == WifiStatus.disconnected) {
+        _connectionStatus = 'Not Connected to Wi-Fi';
+      } else {
+        _connectionStatus = 'Unknown Wi-Fi Status';
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Wi-Fi Status Check'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'Wi-Fi Status:',
+              style: TextStyle(fontSize: 24),
+            ),
+            SizedBox(height: 20),
+            Text(
+              _connectionStatus,
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 40),
+            ElevatedButton(
+              onPressed: _checkWifiStatus,
+              child: Text('Check Again'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+void main() {
+  runApp(MaterialApp(home: WifiStatusPage()));
+}
+
+```
