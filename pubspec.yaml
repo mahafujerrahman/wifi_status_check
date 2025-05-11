@@ -1,6 +1,6 @@
 name: wifi_status
 description: "The wifi_status package provides a simple way to check the Wi-Fi connection status on a device. It allows you to determine whether the device is connected to Wi-Fi, not connected, or using mobile data. The package is compatible with Flutter 2.0+ and supports null safety."
-version: 0.0.5
+version: 0.0.7
 homepage: https://github.com/mahafujerrahman/wifi_status_check.git
 
 environment:

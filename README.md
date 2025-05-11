@@ -1,4 +1,4 @@
-# Wi-Fi Status Check App
+# Wi-Fi Status Check
 
 This Flutter app allows users to check the current Wi-Fi connection status of their device. It uses the `wifi_status` package to retrieve the status and displays whether the device is connected to Wi-Fi or not.
 
@@ -17,6 +17,17 @@ Prerequisites
 Flutter 2.0+: Ensure you have Flutter 2.0 or later installed.
 
 Dart 2.12+: The package supports Dart null safety.
+
+## Android Setup
+Add Permissions to AndroidManifest.xml
+   You need to declare the following permissions in your app's AndroidManifest.xml file to request access to Wi-Fi and network state.
+
+Open android/app/src/main/AndroidManifest.xml and add the following inside the <manifest> tag:
+   ```xml
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+   ```
+These permissions are required to check Wi-Fi connection status and network state.
 
 ## Usage
 
