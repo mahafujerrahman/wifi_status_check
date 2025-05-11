@@ -2,6 +2,10 @@
 
 This Flutter app allows users to check the current Wi-Fi connection status of their device. It uses the `wifi_status` package to retrieve the status and displays whether the device is connected to Wi-Fi or not.
 
+[![Pub Version](https://img.shields.io/pub/v/wifi_status.svg)](https://pub.dev/packages/wifi_status)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
 ## Features
 - Displays Wi-Fi connection status: Connected or Disconnected.
 - Simple and user-friendly UI.
