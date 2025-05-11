@@ -85,3 +85,24 @@ void main() {
 }
 
 ```
+## Requirements
+Flutter 2.0+
+
+Dart 2.12+ (Supports null safety)
+
+## Contributing
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-name`).
+3. Make your changes.
+4. Commit your changes (`git commit -am 'Add new feature'`).
+5. Push to the branch (`git push origin feature-name`).
+6. Open a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+
+## Contact
+For any questions or issues, feel free to reach out or open an issue on the [GitHub repository](https://github.com/mahafujerrahman/wifi_status_check.git).
